@@ -1,0 +1,140 @@
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 8px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation */
+.nav > ul {
+  font-size: 18px;
+  display: flex;
+  gap: 25px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul > li {
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav > ul > li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Body Section */
+.body {
+  padding: 20px 20px;
+  background-color: #fafafa;
+}
+
+/* Search Bar */
+.search {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  width: 300px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search:focus {
+  border: 2px solid #ff7e5f;
+  box-shadow: 0 0 8px rgba(255, 126, 95, 0.5);
+  outline: none;
+}
+
+/* Restaurant Container */
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* Restaurant Card */
+.res-card {
+  padding: 15px;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.res-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Food Image */
+.res-imag {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* Restaurant Info */
+.res-card h1 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.res-card h4 {
+  margin: 4px 0;
+  color: #777;
+  font-weight: 500;
+}
+/* Filter Button */
+.filter-btn {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 8px;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 126, 95, 0.4);
+}
+
+.filter-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
