@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 
@@ -10,6 +11,7 @@ const Body = () => {
    useEffect(() => {
       fetchData();
    }, []);
+   
 
    const fetchData = async () => {
   try {
@@ -19,7 +21,7 @@ const Body = () => {
     const json = await data.json();
     console.log("Full JSON:", json);
 
-    // 👇 find the restaurants
+    //  find the restaurants
     const restaurants =
       json?.data?.cards
         ?.map(c => c.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -32,7 +34,9 @@ const Body = () => {
   }
 };
 
-
+  if(ListofRestaurants.length === 0) {
+    return <Shimmer />;
+}
 
 
    return (

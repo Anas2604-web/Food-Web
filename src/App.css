@@ -138,3 +138,74 @@
   transform: scale(0.97);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+/* Shimmer container should use same layout as your card container */
+.shimmer-wrapper {
+  display: flex;              /* or grid, whatever your cards use */
+  flex-wrap: wrap;            /* if your cards wrap */
+  gap: 20px;                  /* same gap as your cards */
+  justify-content: center;    /* align like your real cards */
+  padding: 20px;
+}
+
+/* Card skeleton (same size as your real card) */
+.shimmer-card {
+  margin-top: 10px;
+  width: 250px;     /* match your real card width */
+  height: 350px;    /* match your real card height */
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f6f7f8;
+  position: relative;
+}
+
+/* Shimmer effect */
+.shimmer-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Inside placeholders */
+.shimmer-image {
+  width: 100%;
+  height: 60%;
+  background: #e0e0e0;
+}
+
+.shimmer-text {
+  width: 80%;
+  height: 15px;
+  margin: 10px auto;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.shimmer-rating {
+  width: 50%;
+  height: 15px;
+  margin: 10px auto;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
