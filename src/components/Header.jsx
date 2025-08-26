@@ -20,7 +20,7 @@ import { useState } from "react";
             <button  onClick={() => {
               loggedIn === "logout" ? setloggedIn("login") :
               setloggedIn("logout");
-            }} className="btn">{loggedIn}</button>
+            }} className="buttonn">{loggedIn}</button>
           </ul>
         </div>
       </div>
