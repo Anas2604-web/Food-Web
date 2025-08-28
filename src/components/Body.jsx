@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -27,7 +28,6 @@ const Body = () => {
       `/api/proxy?lat=12.9351929&lng=77.62448069999999`
     );
     const json = await data.json();
-    console.log("Full JSON:", json);
 
     //  find the restaurants
     const restaurants =
@@ -98,7 +98,9 @@ const Body = () => {
             <h1>No Results Found</h1> 
           ) : (
             filteredRestaurants.map((restaurant) => (
-             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+              <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id} className="link"> 
+             <RestaurantCard  resData={restaurant} />
+             </Link>
             ))
           )}
         </div>

@@ -9,6 +9,7 @@ import About from "./components/About.jsx";
 import Body from "./components/Body.jsx";
 import Error from "./components/Error.jsx"; // ✅ uncommented
 import Contact from "./components/Contact.jsx";
+import RestaurantMenu from "./components/RestaurantMenu.jsx";
 
 // define routes
 const appRouter = createBrowserRouter([
@@ -29,6 +30,11 @@ const appRouter = createBrowserRouter([
         path: "contact",   // ✅ relative path
         element: <Contact />,
       },
+      {
+        path: "/restaurants/:resId",   // ✅ relative path
+        element: <RestaurantMenu />,
+      },
+      
     ],
   },
 ]);

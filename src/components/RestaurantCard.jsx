@@ -1,7 +1,7 @@
-import CDN_URL from "../utils/constants";
+import {CDN_URL} from "../utils/constants";
 const RestaurantCard = ({ resData }) => {
   const { name, cloudinaryImageId, cuisines, avgRating, sla, costForTwo } = resData.info;
-
+  
 
     return  (
       <div className="res-card">

@@ -15,9 +15,9 @@ import { Link } from "react-router-dom";
         </div>
         <div className="nav">
           <ul>
-            <li> <Link to="/">Home</Link></li>
-            <li> <Link to="/about">About</Link></li>
-            <li> <Link to= "/contact">Contact Us</Link></li>
+            <li> <Link to="/" className="link">Home</Link></li>
+            <li> <Link to="/about" className="link">About</Link></li>
+            <li> <Link to= "/contact" className="link">Contact Us</Link></li>
             <li>Cart</li>
             <button  onClick={() => {
               loggedIn === "logout" ? setloggedIn("login") :
