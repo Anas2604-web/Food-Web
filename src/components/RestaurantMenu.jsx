@@ -5,7 +5,6 @@ import Shimmer from "./Shimmer";
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
-  // ✅ destructure both restaurantInfo and menuItems from hook
   const { restaurantInfo, menuItems } = useRestaurantMenu(resId);
 
   if (!restaurantInfo) {
