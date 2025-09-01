@@ -1,37 +1,122 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineConnection from "../utils/useOnlineConnection";
+import { Menu, X } from "lucide-react"; // for hamburger icons
 
-  const Header = () => {
+const Header = () => {
+  const [loggedIn, setLoggedIn] = useState("login");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-   const [loggedIn,setloggedIn] = useState("login");
+  const Online = useOnlineConnection();
 
-   const Online = useOnlineConnection();
-
-    return  (
-      <div className="header">
-        <div className="logo-container">
-          <img 
-          src="/logo.jpg"
-          className="logo">
-          </img>
+  return (
+    <header className="w-full bg-pink-100 shadow-2xl z-50">
+      <div className="flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <div>
+          <img src="/logo.jpg" alt="Logo" className="w-24 h-auto" />
         </div>
-        <div className="nav">
-          <ul>
-            <li> Online Status:
-              {Online ? "🟢" : "🔴"}
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center">
+          <ul className="flex gap-8 font-medium text-gray-700 items-center">
+            <li className="px-3 text-sm text-gray-500">
+              Online Status: {Online ? "🟢" : "🔴"}
             </li>
-            <li> <Link to="/" className="link">Home</Link></li>
-            <li> <Link to="/about" className="link">About</Link></li>
-            <li> <Link to= "/contact" className="link">Contact Us</Link></li>
+            <li>
+              <Link to="/" className="px-3 py-2 hover:text-pink-500 transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="px-3 py-2 hover:text-pink-500 transition"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="px-3 py-2 hover:text-pink-500 transition"
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li className="px-3">Cart</li>
+
+            {/* Login Button */}
+            <button
+              onClick={() =>
+                setLoggedIn(loggedIn === "logout" ? "login" : "logout")
+              }
+              className="ml-6 px-5 py-2 rounded-xl bg-pink-500 text-white font-medium hover:bg-pink-600 active:scale-95 transition"
+            >
+              {loggedIn}
+            </button>
+          </ul>
+        </nav>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="md:hidden p-2 text-gray-700"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-pink-50 px-6 py-4">
+          <ul className="flex flex-col gap-4 text-gray-700 font-medium">
+            <li className="text-sm text-gray-500">
+              Online Status: {Online ? "🟢" : "🔴"}
+            </li>
+            <li>
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-pink-500 transition"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-pink-500 transition"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-pink-500 transition"
+              >
+                Contact Us
+              </Link>
+            </li>
             <li>Cart</li>
-            <button  onClick={() => {
-              loggedIn === "logout" ? setloggedIn("login") :
-              setloggedIn("logout");
-            }} className="buttonn">{loggedIn}</button>
+
+            <button
+              onClick={() => {
+                setLoggedIn(loggedIn === "logout" ? "login" : "logout");
+                setIsMenuOpen(false);
+              }}
+              className="px-5 py-2 rounded-xl bg-pink-500 text-white font-medium hover:bg-pink-600 active:scale-95 transition"
+            >
+              {loggedIn}
+            </button>
           </ul>
         </div>
-      </div>
-    )
-  }
-  export default Header;
+      )}
+    </header>
+  );
+};
+
+export default Header;
