@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -29,20 +30,11 @@ const RestaurantMenu = () => {
         Menu
       </h3>
       <ul className="space-y-3 h-96 overflow-y-auto pr-2 custom-scrollbar">
-        {menuItems.map((item) => (
-          <li
-            key={item.card.info.id}
-            className="flex justify-between items-center bg-gray-50 hover:bg-gray-100 p-3 rounded-lg shadow-sm transition"
-          >
-            <span className="text-gray-800 font-medium">
-              {item.card.info.name}
-            </span>
-            <span className="text-gray-700 font-semibold">
-              ₹{(item.card.info.price ?? item.card.info.defaultPrice) / 100}
-            </span>
-          </li>
+        {menuItems.map((category) => (
+          <RestaurantCategory key={category.title} category={category} />
         ))}
       </ul>
+
     </div>
   </div>
 );

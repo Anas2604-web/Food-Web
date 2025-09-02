@@ -6,7 +6,7 @@ const useRestaurantMenu = (resId) => {
 
   useEffect(() => {
     fetchMenu();
-  }, [resId]); // add resId as dependency
+  }, [resId]); //  resId as dependency
 
   const fetchMenu = async () => {
     const data = await fetch(
@@ -14,24 +14,26 @@ const useRestaurantMenu = (resId) => {
     );
 
     const json = await data.json();
-    console.log("FULL JSON:", json);
-
-    // ✅ Restaurant info
+    //  Restaurant info
     const info = json?.data?.cards?.find(c => c.card?.card?.info)?.card?.card?.info;
     setRestaurantInfo(info);
 
-    // ✅ Menu items
-    const allItems =
+    //  Menu items
+    const categories =
   json?.data?.cards
     ?.find(c => c.groupedCard)
     ?.groupedCard?.cardGroupMap?.REGULAR?.cards
-    ?.flatMap(c => c.card?.card?.itemCards || []) || [];
+    ?.filter(c => 
+      c.card?.card?.["@type"] === 
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    )
+    ?.map(c => ({
+      title: c.card.card.title,
+      items: c.card.card.itemCards?.map(it => it.card.info) || []
+    })) || [];
 
-    const uniqueItems = Array.from(
-    new Map(allItems.map(it => [it.card.info.id, it])).values()
-    );
+setMenuItems(categories);
 
-    setMenuItems(uniqueItems);
 
   };
 
