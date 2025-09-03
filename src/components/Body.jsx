@@ -59,7 +59,7 @@ if(!isOnline) {
 
 
    return (
-  <div className="px-4 sm:px-6 lg:px-12 py-6 min-h-screen bg-[url('/img1.png')] bg-repeat bg-fixed">
+  <div className="px-4 sm:px-6 lg:px-12 py-6 min-h-screen bg-[url('/img.png')] bg-repeat">
     {/* Filter Section */}
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white rounded-2xl shadow-md px-4 sm:px-6 py-4">
       {/* Search Bar */}

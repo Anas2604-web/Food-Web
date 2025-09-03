@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[url('/img1.png')] bg-repeat bg-fixed px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[url('/img.png')] bg-repeat  px-4">
       <div className="p-8 max-w-3xl mx-auto bg-white/90 rounded-2xl shadow-xl backdrop-blur-sm mb-48">
         <h1 className="text-center font-extrabold text-3xl text-orange-500 relative inline-block">
           About Us

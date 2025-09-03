@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     return <Shimmer />;
   }
  return (
-  <div className="bg-[url('/img1.png')] bg-repeat bg-fixed min-h-screen py-6">
+  <div className="bg-[url('/img.png')] bg-repeat min-h-screen py-6">
   <div className="flex justify-center px-4">
     <div className="w-full max-w-3xl p-6 m-6 bg-white rounded-2xl shadow-lg">
       {/* Restaurant Info */}
