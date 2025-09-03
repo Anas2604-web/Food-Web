@@ -33,6 +33,7 @@ const useRestaurantMenu = (resId) => {
     })) || [];
 
 setMenuItems(categories);
+console.log(categories);
 
 
   };
