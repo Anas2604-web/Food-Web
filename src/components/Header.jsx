@@ -10,7 +10,7 @@ const Header = () => {
   const Online = useOnlineConnection();
 
   return (
-    <header className="w-full bg-pink-100 shadow-2xl z-50">
+    <header className="w-full bg-orange-100 shadow-2xl z-50">
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div>
@@ -24,14 +24,14 @@ const Header = () => {
               Online Status: {Online ? "🟢" : "🔴"}
             </li>
             <li>
-              <Link to="/" className="px-3 py-2 hover:text-pink-500 transition">
+              <Link to="/" className="px-3 py-2 hover:text-orange-400 transition">
                 Home
               </Link>
             </li>
             <li>
               <Link
                 to="/about"
-                className="px-3 py-2 hover:text-pink-500 transition"
+                className="px-3 py-2 hover:text-orange-400 transition"
               >
                 About
               </Link>
@@ -39,7 +39,7 @@ const Header = () => {
             <li>
               <Link
                 to="/contact"
-                className="px-3 py-2 hover:text-pink-500 transition"
+                className="px-3 py-2 hover:text-orange-400 transition"
               >
                 Contact Us
               </Link>
@@ -51,7 +51,7 @@ const Header = () => {
               onClick={() =>
                 setLoggedIn(loggedIn === "logout" ? "login" : "logout")
               }
-              className="ml-6 px-5 py-2 rounded-xl bg-pink-500 text-white font-medium hover:bg-pink-600 active:scale-95 transition"
+              className="ml-6 px-5 py-2 rounded-xl bg-orange-400 text-white font-medium hover:bg-orange-500 active:scale-95 transition"
             >
               {loggedIn}
             </button>
@@ -69,7 +69,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-pink-50 px-6 py-4">
+        <div className="md:hidden bg-orange-50 px-6 py-4">
           <ul className="flex flex-col gap-4 text-gray-700 font-medium">
             <li className="text-sm text-gray-500">
               Online Status: {Online ? "🟢" : "🔴"}
@@ -78,7 +78,7 @@ const Header = () => {
               <Link
                 to="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-pink-500 transition"
+                className="hover:text-orange-500 transition"
               >
                 Home
               </Link>
@@ -87,7 +87,7 @@ const Header = () => {
               <Link
                 to="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-pink-500 transition"
+                className="hover:text-orange-500 transition"
               >
                 About
               </Link>
@@ -96,7 +96,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="hover:text-pink-500 transition"
+                className="hover:text-orange-500 transition"
               >
                 Contact Us
               </Link>
@@ -108,7 +108,7 @@ const Header = () => {
                 setLoggedIn(loggedIn === "logout" ? "login" : "logout");
                 setIsMenuOpen(false);
               }}
-              className="px-5 py-2 rounded-xl bg-pink-500 text-white font-medium hover:bg-pink-600 active:scale-95 transition"
+              className="px-5 py-2 rounded-xl bg-orange-400 text-white font-medium hover:bg-orange-500 active:scale-95 transition"
             >
               {loggedIn}
             </button>

@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
   }
  return (
   <div className="flex justify-center px-4">
-    <div className="w-full max-w-2xl p-6 m-6 bg-white rounded-2xl shadow-lg">
+    <div className="w-full max-w-3xl p-6 m-6 bg-white rounded-2xl shadow-lg">
       {/* Restaurant Info */}
       <div className="border-b pb-4 mb-4">
         <h2 className="text-2xl font-extrabold text-gray-800 text-center sm:text-left">

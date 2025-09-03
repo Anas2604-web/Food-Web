@@ -67,7 +67,7 @@ if(!isOnline) {
         <input
           type="text"
           placeholder="Search restaurants..."
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm sm:text-base"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm sm:text-base"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -89,7 +89,7 @@ if(!isOnline) {
               setNoResults(true);
             }
           }}
-          className="ml-2 sm:ml-4 px-4 sm:px-5 py-2 bg-pink-100 text-pink-600 font-medium rounded-lg hover:bg-pink-200 transition text-sm sm:text-base"
+          className="ml-2 sm:ml-4 px-4 sm:px-5 py-2 bg-orange-100 text-orange-400 font-medium rounded-lg cursor-pointer hover:bg-orange-200 transition text-sm sm:text-base"
         >
           Search
         </button>
@@ -103,7 +103,7 @@ if(!isOnline) {
           );
           setFilteredRestaurants(filteredList);
         }}
-        className="w-full sm:w-auto px-4 sm:px-5 py-2 bg-pink-100 text-pink-600 font-medium rounded-lg hover:bg-pink-200 transition text-sm sm:text-base"
+        className="w-full sm:w-auto px-4 sm:px-5 py-2 bg-orange-100 text-orange-400 font-medium rounded-lg cursor-pointer hover:bg-orange-200 transition text-sm sm:text-base "
       >
         Top Rated Restaurants
       </button>
