@@ -14,7 +14,7 @@ const Header = () => {
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div>
-          <img src="/logo.jpg" alt="Logo" className="w-24 h-auto" />
+          <img src="/logo2.png" alt="Logo" className="w-42 h-24" />
         </div>
 
         {/* Desktop Navigation */}
