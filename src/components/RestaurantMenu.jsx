@@ -2,11 +2,14 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const { restaurantInfo, menuItems } = useRestaurantMenu(resId);
+
+  const [openIndex, setOpenIndex] = useState(null);
 
   if (!restaurantInfo) {
     return <Shimmer />;
@@ -31,8 +34,14 @@ const RestaurantMenu = () => {
         Menu
       </h3>
       <ul className="space-y-3 h-96 overflow-y-auto pr-2 custom-scrollbar">
-        {menuItems.map((category) => (
-          <RestaurantCategory key={category.title} category={category} />
+        {menuItems.map((category,index) => (
+          <RestaurantCategory key={category.title}
+           category={category}
+           isOpen={openIndex === index}
+           onToggle={()=> { 
+            setOpenIndex(openIndex === index ? null : index);
+           }}
+           />
         ))}
       </ul>
 
