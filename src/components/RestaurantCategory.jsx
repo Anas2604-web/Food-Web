@@ -42,11 +42,22 @@ const RestaurantCategory = ({ category, onToggle, isOpen }) => {
           </div>
 
           {/* Right side (image) */}
-          <img
+          <div className="relative">
+          <img 
             src={CDN_URL + item.imageId}
             alt="op"
             className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg flex-shrink-0"
           />
+          <button 
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 
+                      bg-white text-green-600 font-bold text-xs sm:text-sm mb-3
+                      px-1 rounded-md shadow-md border border-gray-200 
+                      hover:bg-green-50 transition flex items-center"
+          >
+            ADD +
+          </button>
+        </div>
+
         </li>
 
           ))}
