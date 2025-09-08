@@ -2,12 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineConnection from "../utils/useOnlineConnection";
 import { Menu, X } from "lucide-react"; // for hamburger icons
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loggedIn, setLoggedIn] = useState("login");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const Online = useOnlineConnection();
+  
+  // Subscribing to the Redux store to get cart items
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems); 
 
   return (
     <header className="w-full bg-orange-100 shadow-2xl z-50">
@@ -44,7 +49,7 @@ const Header = () => {
                 Contact Us
               </Link>
             </li>
-            <li className="px-3">Cart</li>
+            <li className="px-3 font-bold">Cart - ({cartItems.length})</li>
 
             {/* Login Button */}
             <button

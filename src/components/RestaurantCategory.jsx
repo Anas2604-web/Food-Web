@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 const RestaurantCategory = ({ category, onToggle, isOpen }) => {
   
+  const dispatch = useDispatch();
+   
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  }
+    
 
   return (
     <li className="border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition sm:mx-0">
@@ -53,6 +61,7 @@ const RestaurantCategory = ({ category, onToggle, isOpen }) => {
                       bg-white text-green-600 font-bold text-xs sm:text-sm mb-3
                       px-1 rounded-md shadow-md border border-gray-200 
                       hover:bg-green-50 transition flex items-center"
+                      onClick={() => handleAddItem(item)}
           >
             ADD +
           </button>
