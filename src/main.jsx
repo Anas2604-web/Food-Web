@@ -9,6 +9,7 @@ import Body from "./components/Body.jsx";
 import Error from "./components/Error.jsx";
 import Contact from "./components/Contact.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
+import Cart from "./components/Cart.jsx";
 
 // define routes
 const appRouter = createBrowserRouter([
@@ -33,6 +34,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resId",   //  relative path
         element: <RestaurantMenu />,
       },
+      {
+        path: "cart",
+        element: <Cart/>,
+      }
       
     ],
   },

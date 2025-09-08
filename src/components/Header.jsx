@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div>
-          <img src="/logo.png" alt="Logo" className="w-42 h-24" />
+          <img src="/logo.webp" alt="Logo" className="w-42 h-24" />
         </div>
 
         {/* Desktop Navigation */}
@@ -49,7 +49,11 @@ const Header = () => {
                 Contact Us
               </Link>
             </li>
-            <li className="px-3 font-bold">Cart - ({cartItems.length})</li>
+            <li className="px-3 font-bold">
+              <Link to="/cart" className="hover:text-orange-400 transition">
+               🛒 - ({cartItems.length})
+              </Link>
+               </li>
 
             {/* Login Button */}
             <button
@@ -106,7 +110,11 @@ const Header = () => {
                 Contact Us
               </Link>
             </li>
-            <li>Cart</li>
+            <li>
+              <Link to="/cart" className="hover:text-orange-500 transition">
+               🛒 - ({cartItems.length})
+              </Link>
+              </li>
 
             <button
               onClick={() => {
