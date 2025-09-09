@@ -18,14 +18,18 @@ const Cart = () => {
       <div className="max-w-4xl mx-auto">
         {/* Floating White Card */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-          <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
+          <h1 className="text-3xl font-extrabold text-center text-orange-500 mb-8">
             🛒 Your Cart
           </h1>
-          <button className="text-center bg-orange-300 rounded-lg text-gray-600 mb-4 hover:text-red-500 transition p-4 m-4"
-          onClick={handleClearCart}
+          <div className="flex justify-center">
+          <button
+            className="text-center bg-amber-500 hover:bg-auto justify-center rounded-lg text-gray-600 mb-4 transition p-4 m-4 mr-1 cursor-pointer"
+            onClick={handleClearCart}
           >
             Clear Cart
           </button>
+         </div>
+
 
           {/* Empty State */}
           {cartItems.length === 0 ? (
