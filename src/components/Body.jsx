@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withOpenStatus} from "./RestaurantCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -18,6 +18,10 @@ const Body = () => {
    const [noResults, setNoResults] = useState(false);
 
    const isOnline = useOnlineConnection();
+
+   const OpenStatusRestaurantCard = withOpenStatus(RestaurantCard);
+
+   console.log("Body Rendered, ListofRestaurants: ", ListofRestaurants);
 
    useEffect(() => {
       fetchData();
@@ -122,7 +126,7 @@ if(!isOnline) {
             key={restaurant.info.id}
             className="link"
           >
-            <RestaurantCard resData={restaurant} />
+            <OpenStatusRestaurantCard resData={restaurant} />
           </Link>
         ))
       )}

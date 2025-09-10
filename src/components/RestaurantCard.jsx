@@ -23,4 +23,27 @@ const RestaurantCard = ({ resData }) => {
 );
 
   }
+  export const withOpenStatus = (RestaurantCard) => {
+  return (props) => {
+    const { isOpen } = props.resData.info;
+
+    return (
+      <div className="relative">
+        <label
+          className={`absolute text-white text-xs px-2 py-1 rounded-br-lg rounded-tl-lg z-10 ${
+            isOpen ? "bg-green-600" : "bg-red-600"
+          }`}
+        >
+          {isOpen ? "OPEN" : "CLOSED"}
+        </label>
+
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
+
+  
+
  export default RestaurantCard;
