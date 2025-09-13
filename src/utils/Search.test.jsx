@@ -43,5 +43,22 @@ describe("Checking Search Functionality", () => {
     const searchAfterInput = screen.getAllByTestId("restaurant-card");
 
     expect(searchAfterInput.length).toBe(2);
+  });
+
+  it("should filter the restaurant which are top rated ", async () => {
+    render(
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    )
+
+    const TopBtn = await screen.findByRole("button", { name: /Top Rated Restaurants/i })
+    fireEvent.click(TopBtn);
+
+    const ToprestaurantLists = screen.getAllByTestId("restaurant-card")
+
+    expect(ToprestaurantLists.length).toBe(8);
+
+
   })
 })
