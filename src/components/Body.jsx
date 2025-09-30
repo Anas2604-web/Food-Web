@@ -21,7 +21,6 @@ const Body = () => {
 
    const OpenStatusRestaurantCard = withOpenStatus(RestaurantCard);
 
-   console.log("Body Rendered, ListofRestaurants: ", ListofRestaurants);
 
    useEffect(() => {
       fetchData();

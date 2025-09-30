@@ -17,7 +17,6 @@ const ItemList = ({ items, showAddButton = true }) => {
         key={item.id}
         className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-white hover:bg-gray-50 p-4 rounded-lg shadow-sm transition"
       >
-        {/* Left side */}
         <div className="flex-1 sm:pr-4 mb-3 sm:mb-0">
           <span className="block text-gray-800 text-base font-medium">
             {item.name}
@@ -30,7 +29,6 @@ const ItemList = ({ items, showAddButton = true }) => {
           </span>
         </div>
 
-        {/* Right side */}
         <div className="relative flex-shrink-0 self-center sm:self-auto">
           <img
             src={CDN_URL + item.imageId}
@@ -38,7 +36,7 @@ const ItemList = ({ items, showAddButton = true }) => {
             className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg"
           />
 
-          {/* Show Add button only if prop is true */}
+
           {showAddButton && (
             <button
               className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 

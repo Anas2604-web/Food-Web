@@ -18,7 +18,6 @@ const RestaurantMenu = () => {
   <div className="bg-[url('/img.webp')] bg-repeat min-h-screen py-6">
   <div className="flex justify-center px-4">
     <div className="w-full max-w-3xl p-6 m-6 bg-white rounded-2xl shadow-lg">
-      {/* Restaurant Info */}
       <div className="border-b pb-4 mb-4">
         <h2 className="text-2xl font-extrabold text-gray-800 text-center sm:text-left">
           {restaurantInfo.name}
@@ -29,7 +28,6 @@ const RestaurantMenu = () => {
         </h3>
       </div>
 
-      {/* Menu */}
       <h3 className="text-lg font-semibold text-gray-700 mb-3 text-center sm:text-left">
         Menu
       </h3>

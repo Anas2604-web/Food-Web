@@ -11,7 +11,6 @@ const RestaurantCategory = ({ category, onToggle, isOpen }) => {
 
   return (
     <li className="border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition sm:mx-0">
-      {/* Accordion Header */}
       <button
         onClick={onToggle}
         className="w-full flex justify-between items-center px-4 py-3 text-left bg-gray-50 hover:bg-gray-100 rounded-xl cursor-pointer transition"
@@ -25,7 +24,6 @@ const RestaurantCategory = ({ category, onToggle, isOpen }) => {
         </span>
       </button>
 
-      {/* ✅ Items with Add button */}
       {isOpen && <ItemList items={category.items} showAddButton={true} />}
     </li>
   );

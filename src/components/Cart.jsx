@@ -44,10 +44,8 @@ const Cart = () => {
             </div>
           ) : (
             <>
-              {/* Items */}
               <ItemList items={cartItems} showAddButton={false} />
 
-              {/* Checkout Summary */}
               <div className="flex justify-between items-center mt-8 border-t pt-6">
                 <span className="text-xl font-semibold text-gray-800">
                   Total: ₹
